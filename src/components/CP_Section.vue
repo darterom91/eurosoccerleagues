@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="contenido d-flex p-2 justify-content-center align-items-center bg-dark">
-      <div v-for="(team, index) in teamsLaLiga.teams" :key="index">
-          <div v-if="team.crestUrl != null" class="contentLogo">
+      <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+          <div class="contentLogo">
             <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
           </div>
       </div>
@@ -118,8 +118,8 @@ export default {
     margin: 0.5px;
   }
   .logos{
-    width: 18px;
-    height: 25px;
+    width: 15px;
+    height: 20px;
   }
 }
 
@@ -146,8 +146,8 @@ export default {
     margin: 0.5px;
   }
   .logos{
-    width: 30px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -160,8 +160,8 @@ export default {
     margin: 0px;
   }
   .logos{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 }
 
