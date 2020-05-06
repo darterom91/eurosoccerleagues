@@ -10,7 +10,7 @@
           </div>
           <div class="d-flex justify-content-center border-left border-right border-bottom rounded-bottom border-warning">
             <div class="w-100 align-self-center bg-dark text-warning py-3">
-              <router-link class="text-warning" :to="{name: 'Team', params:{id: match.homeTeam.id}}">
+              <router-link class="text-warning" :to="{name: 'TeamLaLiga', params:{id: match.homeTeam.id}}">
                 {{match.homeTeam.name}}
               </router-link>
             </div>
@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="w-100 align-self-center bg-dark py-3">
-              <router-link class="text-warning" :to="{name: 'Team', params:{id: match.awayTeam.id}}">
+              <router-link class="text-warning" :to="{name: 'TeamLaLiga', params:{id: match.awayTeam.id}}">
                 {{match.awayTeam.name}}
               </router-link>
             </div>

@@ -31,6 +31,12 @@ const routes = [
     name: 'Team',
     props: true,
     component: () => import(/* webpackChunkName: "Teams" */ '../views/Team.vue')
+  },
+  {
+    path: '/teamLaliga/:id',
+    name: 'TeamLaLiga',
+    props: true,
+    component: () => import(/* webpackChunkName: "Teams" */ '../views/TeamLaLiga.vue')
   }
 ]
 
