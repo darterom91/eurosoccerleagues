@@ -19,10 +19,24 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
+    path: '/laLiga',
+    name: 'LaLiga',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "LaLiga" */ '../views/LaLiga.vue')
+  },
+  {
     path: '/team/:id',
     name: 'Team',
     props: true,
     component: () => import(/* webpackChunkName: "Teams" */ '../views/Team.vue')
+  },
+  {
+    path: '/teamLaliga/:id',
+    name: 'TeamLaLiga',
+    props: true,
+    component: () => import(/* webpackChunkName: "Teams" */ '../views/TeamLaLiga.vue')
   }
 ]
 
