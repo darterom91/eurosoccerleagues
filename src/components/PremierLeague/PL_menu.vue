@@ -3,7 +3,7 @@
     <div class="contenido d-flex p-2 justify-content-center align-items-center bg-dark">
       <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
           <div class="contentLogo">
-            <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+            <router-link :to="{name: 'TeamPL', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
           </div>
       </div>
     </div>
