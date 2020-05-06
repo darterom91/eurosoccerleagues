@@ -3,7 +3,7 @@
     dateToday: {{fecha}} | aux: {{fecha2}}
     <div class="contenido border border-warning bg-primary rounded font-weight-bold text-dark my-2">
       <h2 class="titulos text-center text-warning border-bottom border-warning bg-dark py-3">MATCHES</h2>
-      <div class=" m-2" v-for="(match, index3) in matches.matches" :key="index3">
+      <div class=" m-2" v-for="(match, index3) in matchesLaLiga.matches" :key="index3">
         <div class="textcontent border border-dark text-center" v-if="match.utcDate >= fecha && match.utcDate <= fecha2">
           <div class="border rounded-top border-warning bg-warning p-2">
             {{match.utcDate}}
@@ -58,10 +58,10 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('Matches');
+    this.$store.dispatch('MatchesLaLiga');
   },
   computed: {
-    ...mapState(['matches'])
+    ...mapState(['matchesLaLiga'])
   },
 }
 </script>
