@@ -1,6 +1,6 @@
 <template>
   <div>
-    Serie A
+    Team Serie A
   </div>
 </template>
 
@@ -9,3 +9,7 @@ export default {
   
 }
 </script>
+
+<style scoped>
+
+</style>

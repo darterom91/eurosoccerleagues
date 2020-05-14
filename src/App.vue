@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/premierLeague">Premier League</router-link> |
-      <router-link to="/LaLiga">La Liga</router-link>
+      <router-link to="/LaLiga">La Liga</router-link> |
+      <router-link to="/serieA">Serie A</router-link>
     </div>
     <router-view/>
   </div>
