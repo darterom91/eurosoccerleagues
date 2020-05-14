@@ -26,6 +26,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "PremierLeague" */ '../views/PremierLeague.vue')
   },
+  {
     path: '/laLiga',
     name: 'LaLiga',
     // route level code-splitting

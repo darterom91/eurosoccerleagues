@@ -1,36 +1,36 @@
 <template>
   <div >
     <cpHeader/>
-    <div v-for="(tm, Xindex) in teamsLaLiga.teams" :key="Xindex">
+    <div v-for="(tm, Xindex) in teamsPL.teams" :key="Xindex">
       <div class="text-center" v-if="tm.id == id">
         <h3 class="bg-dark border border-warning text-warning p-2">Calendario: {{tm.name}}</h3>
       </div>
     </div>
 
-  <div v-for="(leagueStanding, Jindex) in leagueStandings.standings" :key="Jindex">
-    <div v-if="leagueStanding.type == 'TOTAL' ">
-      <div v-for="(tableTeam, JYindex) in leagueStanding.table" :key="JYindex">
-        <div v-if="tableTeam.team.id == id">
+  <div v-for="(standingPL, Jindex) in standingsPL.standings" :key="Jindex">
+    <div v-if="standingPL.type == 'TOTAL' ">
+      <div v-for="(tableTeamPL, JYindex) in standingPL.table" :key="JYindex">
+        <div v-if="tableTeamPL.team.id == id">
           <div class="d-flex border border-dark bg-warning mx-2 mt-2">
-            <div class="text-center border border-dark flex-grow-1 p-2">TEAM: {{tableTeam.team.name}}</div>
-            <div class="text-center border border-dark flex-grow-1 p-2">pos: {{tableTeam.position}}</div>
+            <div class="text-center border border-dark flex-grow-1 p-2">TEAM: {{tableTeamPL.team.name}}</div>
+            <div class="text-center border border-dark flex-grow-1 p-2">pos: {{tableTeamPL.position}}</div>
           </div>
           <div class="d-flex border border-dark mx-2 mb-2 p-2 d-flex justify-content-center">
-            <div class="border border-dark p-3 ">Played Games: {{tableTeam.playedGames}}</div>
-            <div class="border border-dark bg-success p-3  text-light">Won: {{tableTeam.won}}</div>
-            <div class="border border-dark p-3  bg-warning text-dark">Draw: {{tableTeam.draw}}</div>
-            <div class="border border-dark p-3  bg-danger text-light">Lost: {{tableTeam.lost}}</div>
-            <div class="border border-dark p-3  bg-primary text-light">Points: {{tableTeam.points}}</div>
-            <div class="border border-dark p-3  bg-success text-light">Goals For: {{tableTeam.goalsFor}}</div>
-            <div class="border border-dark p-3  bg-danger text-light">Goals Against: {{tableTeam.goalsAgainst}}</div>
-            <div class="border border-dark p-3  bg-primary text-light">Goal Difference: {{tableTeam.goalDifference}}</div>
+            <div class="border border-dark p-3 ">Played Games: {{tableTeamPL.playedGames}}</div>
+            <div class="border border-dark bg-success p-3  text-light">Won: {{tableTeamPL.won}}</div>
+            <div class="border border-dark p-3  bg-warning text-dark">Draw: {{tableTeamPL.draw}}</div>
+            <div class="border border-dark p-3  bg-danger text-light">Lost: {{tableTeamPL.lost}}</div>
+            <div class="border border-dark p-3  bg-primary text-light">Points: {{tableTeamPL.points}}</div>
+            <div class="border border-dark p-3  bg-success text-light">Goals For: {{tableTeamPL.goalsFor}}</div>
+            <div class="border border-dark p-3  bg-danger text-light">Goals Against: {{tableTeamPL.goalsAgainst}}</div>
+            <div class="border border-dark p-3  bg-primary text-light">Goal Difference: {{tableTeamPL.goalDifference}}</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div v-for="(TMmatches, Yindex) in matches.matches" :key="Yindex">
+  <div v-for="(TMmatches, Yindex) in matchesPL.matches" :key="Yindex">
     <div class="bg-dark border border-warning text-warning m-2 p-2 text-center" v-if="TMmatches.homeTeam.id == id || TMmatches.awayTeam.id == id">
       {{TMmatches.homeTeam.name}} {{TMmatches.score.fullTime.homeTeam}} vs {{TMmatches.score.fullTime.awayTeam}} {{TMmatches.awayTeam.name}}
     </div>
@@ -51,15 +51,15 @@ export default {
     cpFooter
   },
   mounted() {
-    this.$store.dispatch('Teams');
-    this.$store.dispatch('Matches');
-    this.$store.dispatch('LeagueStandings');
+    this.$store.dispatch('TeamsPL');
+    this.$store.dispatch('MatchesPL');
+    this.$store.dispatch('StandingsPL');
   },
   computed: {
     ...mapState([
-      'teamsLaLiga'
-      ,'matches'
-      ,'leagueStandings'])
+      'teamsPL'
+      ,'matchesPL'
+      ,'standingsPL'])
   },
 
 }
