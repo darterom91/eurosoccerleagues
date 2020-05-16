@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid p-0">
     <h2 class="text-center">clasificacion</h2>
-    <div v-for="(leagueStanding, index) in leagueStandings.standings" :key="index">
-      <div class="table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl" v-if="leagueStanding.type =='TOTAL'">
+    <div v-for="(standingBL, index) in standingsBL.standings" :key="index">
+      <div class="table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl" v-if="standingBL.type =='TOTAL'">
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -19,7 +19,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(tables, index2) in leagueStanding.table" :key="index2">
+            <tr v-for="(tables, index2) in standingBL.table" :key="index2">
               <td class="">{{tables.position}}</td>
               <td class="">{{tables.team.name}}</td>
               <td class="">{{tables.playedGames}}</td>
@@ -48,10 +48,10 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('LeagueStandings');
+    this.$store.dispatch('StandingsBL');
   },
   computed: {
-    ...mapState(['leagueStandings'])
+    ...mapState(['standingsBL'])
   },
 }
 </script>
