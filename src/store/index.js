@@ -9,7 +9,15 @@ export default new Vuex.Store({
     teamschampions: [],
     matches: [],
     teamsLaLiga: [],
-    leagueStandings: []
+    leagueStandings: [],
+    //La Liga
+    matchesLaLiga: [],
+    teamsLaLiga2: [],
+    standingsLaLiga: [],
+    //Premier League
+    matchesPL: [],
+    teamsPL: [],
+    standingsPL: [],
   },
   mutations: {
     SET_TEAMSCHAMPIONS(state, teamschampions) {
@@ -31,6 +39,38 @@ export default new Vuex.Store({
       console.log('SET_LEAGUESTANDINGS()');
       console.log(leagueStandings);
       state.leagueStandings = leagueStandings;
+    },
+    //La Liga
+    SET_TEAMS_LALIGA(state, teamsLaLiga2) {
+      console.log('SET_TEAMS_LALIGA()');
+      console.log(teamsLaLiga2);
+      state.teamsLaLiga2 = teamsLaLiga2;
+    },
+    SET_MATCHES_LALIGA(state, matchesLaLiga) {
+      console.log('SET_MATCHES_LALIGA()');
+      console.log(matchesLaLiga);
+      state.matchesLaLiga = matchesLaLiga;
+    },
+    SET_STANDINGS_LALIGA(state, standingsLaLiga) {
+      console.log('SET_STANDINGS_LALIGA()');
+      console.log(standingsLaLiga);
+      state.standingsLaLiga = standingsLaLiga;
+    },
+    //Premier League
+    SET_TEAMS_PL(state, teamsPL) {
+      console.log('SET_TEAMS_PL()');
+      console.log(teamsPL);
+      state.teamsPL = teamsPL;
+    },
+    SET_MATCHES_PL(state, matchesPL) {
+      console.log('SET_MATCHES_PL()');
+      console.log(matchesPL);
+      state.matchesPL = matchesPL;
+    },
+    SET_STANDINGS_PL(state, standingsPL) {
+      console.log('SET_STANDINGS_PL()');
+      console.log(standingsPL);
+      state.standingsPL = standingsPL;
     }
   },
   actions: {
@@ -97,6 +137,110 @@ export default new Vuex.Store({
           console.log('LeagueStandings()');
           console.log(data.data);
           commit('SET_LEAGUESTANDINGS', leagueStandings);
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    //LA LIGA
+    MatchesLaLiga({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2014/matches', {
+          headers: {
+            'X-Auth-Token': "a82fbc3023a849348a52a3bd07c0f40e"
+          }
+        })
+        .then(data => {
+          let matchesLaLiga = data.data;
+          console.log('MatchesLaLiga()');
+          console.log(data.data);
+          commit('SET_MATCHES_LALIGA', matchesLaLiga);
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    TeamsLaLiga({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2014/teams', {
+          headers: {
+            'X-Auth-Token': "a82fbc3023a849348a52a3bd07c0f40e"
+          }
+        })
+        .then(data => {
+          let teamsLaLiga2 = data.data;
+          console.log('TeamsLaLiga()');
+          console.log(data.data);
+          commit('SET_TEAMS_LALIGA', teamsLaLiga2);
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    StandingsLaLiga({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2014/standings', {
+          headers: {
+            'X-Auth-Token': "a82fbc3023a849348a52a3bd07c0f40e"
+          }
+        })
+        .then(data => {
+          let standingsLaLiga = data.data;
+          console.log('StandingsLaLiga()');
+          console.log(data.data);
+          commit('SET_STANDINGS_LALIGA', standingsLaLiga);
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    //PREMIER LEAGUE
+    MatchesPL({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2021/matches', {
+          headers: {
+            'X-Auth-Token': "a82fbc3023a849348a52a3bd07c0f40e"
+          }
+        })
+        .then(data => {
+          let matchesPL = data.data;
+          console.log('MatchesPL()');
+          console.log(data.data);
+          commit('SET_MATCHES_PL', matchesPL);
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    TeamsPL({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2021/teams', {
+          headers: {
+            'X-Auth-Token': "a82fbc3023a849348a52a3bd07c0f40e"
+          }
+        })
+        .then(data => {
+          let teamsPL = data.data;
+          console.log('TeamsPL()');
+          console.log(data.data);
+          commit('SET_TEAMS_PL', teamsPL);
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    },
+    StandingsPL({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2021/standings', {
+          headers: {
+            'X-Auth-Token': "a82fbc3023a849348a52a3bd07c0f40e"
+          }
+        })
+        .then(data => {
+          let standingsPL = data.data;
+          console.log('StandingsPL()');
+          console.log(data.data);
+          commit('SET_STANDINGS_PL', standingsPL);
         })
         .catch(error => {
           console.log(error)
