@@ -4,7 +4,7 @@
     <div class="contenido border border-warning bg-dark rounded font-weight-bold text-dark my-2">
       <h2 class="titulos text-center text-warning border-bottom border-warning py-3">MATCHES</h2>
       <div class=" m-2" v-for="(match, index3) in matchesBL.matches" :key="index3">
-        <div class="textcontent border border-dark text-center" v-if="match.utcDate >= '2019-08-16T19:00:00Z' && match.utcDate <= '2019-08-19T21:00:00Z'">
+        <div class="textcontent border border-dark text-center" v-if="match.utcDate >= fecha && match.utcDate <= fecha2">
           <div class="border rounded-top border-warning bg-warning p-2">
             {{match.utcDate}}
           </div>
@@ -14,14 +14,20 @@
                 {{match.homeTeam.name}}
               </router-link>
             </div>
-            <div class="w-25 align-self-center bg-light py-3">
+            <div class="w-25 border-top border-dark align-self-center bg-light py-3">
               {{match.score.fullTime.homeTeam}}
+              <div v-if="match.score.fullTime.homeTeam == null">
+                0
+              </div>
             </div>
             <div class="w-25 align-self-center bg-warning border-left border-right border-dark py-3">
               vs
             </div>
-            <div class="w-25 align-self-center bg-light py-3">
+            <div class="w-25 border-top border-dark align-self-center bg-light py-3">
               {{match.score.fullTime.awayTeam}}
+              <div v-if="match.score.fullTime.awayTeam == null">
+                0
+              </div>
             </div>
             <div class="w-100 align-self-center py-3">
               <router-link class="text-warning" :to="{name: 'TeamBL', params:{id: match.awayTeam.id}}">
@@ -40,7 +46,7 @@ import {mapState} from 'vuex'
 
 var today = new Date();
 
-var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 1)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
+var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + -1)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
 
 var aux = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 3)).slice(-2)+'T'+"00"+':'+"00"+':'+"00"+'Z';
 
