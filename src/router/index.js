@@ -83,6 +83,12 @@ const routes = [
     name: 'TeamPL',
     props: true,
     component: () => import(/* webpackChunkName: "TeamPL" */ '../views/TeamPL.vue')
+  },
+  {
+    path: '/teaml1/:id',
+    name: 'TeamL1',
+    props: true,
+    component: () => import(/* webpackChunkName: "TeamL1" */ '../views/TeamL1.vue')
   }
 ]
 const router = new VueRouter({
