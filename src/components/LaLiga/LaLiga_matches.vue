@@ -14,7 +14,7 @@
                 {{match.homeTeam.name}}
               </router-link>
             </div>
-            <div class="w-25 align-self-center bg-light py-3">
+            <div class="w-25 border-top border-dark align-self-center bg-light py-3">
               {{match.score.fullTime.homeTeam}}
               <div v-if="match.score.fullTime.homeTeam == null">
                 0
@@ -23,7 +23,7 @@
             <div class="w-25 align-self-center bg-warning border-left border-right border-dark py-3">
               vs
             </div>
-            <div class="w-25 align-self-center bg-light py-3">
+            <div class="w-25 border-top border-dark align-self-center bg-light py-3">
               {{match.score.fullTime.awayTeam}}
               <div v-if="match.score.fullTime.awayTeam == null">
                 0
@@ -46,7 +46,7 @@ import {mapState} from 'vuex'
 
 var today = new Date();
 
-var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 1)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
+var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 0)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
 
 var aux = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 7)).slice(-2)+'T'+"00"+':'+"00"+':'+"00"+'Z';
 
