@@ -2,7 +2,12 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/premierLeague">Premier League</router-link> |
+      <router-link to="/LaLiga">La Liga</router-link> |
+      <router-link to="/bundesliga">Bundesliga</router-link> |
+      <router-link to="/ligueone">Ligue 1</router-link>
+      <!-- <router-link to="/serieA">Serie A</router-link> -->
     </div>
     <router-view/>
   </div>
