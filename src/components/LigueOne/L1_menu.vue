@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="contenido d-flex p-2 justify-content-center align-items-center bg-dark">
-      <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+      <div v-for="(team, index2) in teamsL1.teams" :key="index2">
           <div class="contentLogo">
-            <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+            <router-link :to="{name: 'TeamL1', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
           </div>
       </div>
     </div>
@@ -20,10 +20,10 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('Teams');
+    this.$store.dispatch('TeamsL1');
   },
   computed: {
-    ...mapState(['teamsLaLiga'])
+    ...mapState(['teamsL1'])
   },
 }
 </script>
