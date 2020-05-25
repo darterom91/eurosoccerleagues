@@ -22,6 +22,10 @@ export default new Vuex.Store({
     matchesBL: [],
     teamsBL: [],
     standingsBL: [],
+    //Ligue 1
+    matchesL1: [],
+    teamsL1: [],
+    standingsL1: [],
   },
   mutations: {
     SET_TEAMSCHAMPIONS(state, teamschampions) {
@@ -91,6 +95,22 @@ export default new Vuex.Store({
       console.log('SET_STANDINGS_BL()');
       console.log(standingsBL);
       state.standingsBL = standingsBL;
+    },
+    //Ligue 1
+    SET_TEAMS_L1(state, teamsL1) {
+      console.log('SET_TEAMS_L1()');
+      console.log(teamsL1);
+      state.teamsL1 = teamsL1;
+    },
+    SET_MATCHES_L1(state, matchesL1) {
+      console.log('SET_MATCHES_L1()');
+      console.log(matchesL1);
+      state.matchesL1 = matchesL1;
+    },
+    SET_STANDINGS_L1(state, standingsL1) {
+      console.log('SET_STANDINGS_L1()');
+      console.log(standingsL1);
+      state.standingsL1 = standingsL1;
     },
   },
   actions: {
@@ -313,6 +333,58 @@ export default new Vuex.Store({
           console.log('StandingsBL()');
           console.log(data.data);
           commit('SET_STANDINGS_BL', standingsBL);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    //LIGUE 1
+    MatchesL1({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2015/matches', {
+          headers: {
+            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
+          },
+        })
+        .then((data) => {
+          let matchesL1 = data.data;
+          console.log('MatchesL1()');
+          console.log(data.data);
+          commit('SET_MATCHES_L1', matchesL1);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    TeamsL1({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2015/teams', {
+          headers: {
+            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
+          },
+        })
+        .then((data) => {
+          let teamsL1 = data.data;
+          console.log('TeamsL1()');
+          console.log(data.data);
+          commit('SET_TEAMS_L1', teamsL1);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    StandingsL1({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2015/standings', {
+          headers: {
+            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
+          },
+        })
+        .then((data) => {
+          let standingsL1 = data.data;
+          console.log('StandingsL1()');
+          console.log(data.data);
+          commit('SET_STANDINGS_L1', standingsL1);
         })
         .catch((error) => {
           console.log(error);
