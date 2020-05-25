@@ -22,10 +22,6 @@ export default new Vuex.Store({
     matchesBL: [],
     teamsBL: [],
     standingsBL: [],
-    //Ligue 1
-    matchesL1: [],
-    teamsL1: [],
-    standingsL1: [],
   },
   mutations: {
     SET_TEAMSCHAMPIONS(state, teamschampions) {
@@ -96,27 +92,11 @@ export default new Vuex.Store({
       console.log(standingsBL);
       state.standingsBL = standingsBL;
     },
-    //Ligue 1
-    SET_TEAMS_L1(state, teamsL1) {
-      console.log('SET_TEAMS_L1()');
-      console.log(teamsL1);
-      state.teamsL1 = teamsL1;
-    },
-    SET_MATCHES_L1(state, matchesL1) {
-      console.log('SET_MATCHES_L1()');
-      console.log(matchesL1);
-      state.matchesL1 = matchesL1;
-    },
-    SET_STANDINGS_L1(state, standingsL1) {
-      console.log('SET_STANDINGS_L1()');
-      console.log(standingsL1);
-      state.standingsL1 = standingsL1;
-    },
   },
   actions: {
     TeamsChampions({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/', {
+        .get('https://api.football-data.org/v2/competitions/2014/', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -133,7 +113,7 @@ export default new Vuex.Store({
     },
     Matches({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/matches', {
+        .get('https://api.football-data.org/v2/competitions/2014/matches', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -150,7 +130,7 @@ export default new Vuex.Store({
     },
     Teams({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/teams', {
+        .get('https://api.football-data.org/v2/competitions/2014/teams', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -167,7 +147,7 @@ export default new Vuex.Store({
     },
     LeagueStandings({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/standings', {
+        .get('https://api.football-data.org/v2/competitions/2014/standings', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -185,7 +165,7 @@ export default new Vuex.Store({
     //LA LIGA
     MatchesLaLiga({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/matches', {
+        .get('https://api.football-data.org/v2/competitions/2014/matches', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -202,7 +182,7 @@ export default new Vuex.Store({
     },
     TeamsLaLiga({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/teams', {
+        .get('https://api.football-data.org/v2/competitions/2014/teams', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -219,7 +199,7 @@ export default new Vuex.Store({
     },
     StandingsLaLiga({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2014/standings', {
+        .get('https://api.football-data.org/v2/competitions/2014/standings', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -237,7 +217,7 @@ export default new Vuex.Store({
     //PREMIER LEAGUE
     MatchesPL({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2021/matches', {
+        .get('https://api.football-data.org/v2/competitions/2021/matches', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -254,7 +234,7 @@ export default new Vuex.Store({
     },
     TeamsPL({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2021/teams', {
+        .get('https://api.football-data.org/v2/competitions/2021/teams', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -271,7 +251,7 @@ export default new Vuex.Store({
     },
     StandingsPL({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2021/standings', {
+        .get('https://api.football-data.org/v2/competitions/2021/standings', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -289,7 +269,7 @@ export default new Vuex.Store({
     //BUNDESLIGA
     MatchesBL({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2002/matches', {
+        .get('https://api.football-data.org/v2/competitions/2002/matches', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -306,7 +286,7 @@ export default new Vuex.Store({
     },
     TeamsBL({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2002/teams', {
+        .get('https://api.football-data.org/v2/competitions/2002/teams', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -323,7 +303,7 @@ export default new Vuex.Store({
     },
     StandingsBL({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2002/standings', {
+        .get('https://api.football-data.org/v2/competitions/2002/standings', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -333,58 +313,6 @@ export default new Vuex.Store({
           console.log('StandingsBL()');
           console.log(data.data);
           commit('SET_STANDINGS_BL', standingsBL);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    //LIGUE 1
-    MatchesL1({ commit }) {
-      axios
-        .get('http://api.football-data.org/v2/competitions/2015/matches', {
-          headers: {
-            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
-          },
-        })
-        .then((data) => {
-          let matchesL1 = data.data;
-          console.log('MatchesL1()');
-          console.log(data.data);
-          commit('SET_MATCHES_L1', matchesL1);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    TeamsL1({ commit }) {
-      axios
-        .get('http://api.football-data.org/v2/competitions/2015/teams', {
-          headers: {
-            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
-          },
-        })
-        .then((data) => {
-          let teamsL1 = data.data;
-          console.log('TeamsL1()');
-          console.log(data.data);
-          commit('SET_TEAMS_L1', teamsL1);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    StandingsL1({ commit }) {
-      axios
-        .get('http://api.football-data.org/v2/competitions/2015/standings', {
-          headers: {
-            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
-          },
-        })
-        .then((data) => {
-          let standingsL1 = data.data;
-          console.log('StandingsL1()');
-          console.log(data.data);
-          commit('SET_STANDINGS_L1', standingsL1);
         })
         .catch((error) => {
           console.log(error);
