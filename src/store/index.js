@@ -26,6 +26,10 @@ export default new Vuex.Store({
     matchesL1: [],
     teamsL1: [],
     standingsL1: [],
+    //Serie A
+    matchesSA: [],
+    teamsSA: [],
+    standingsSA: [],
   },
   mutations: {
     SET_TEAMSCHAMPIONS(state, teamschampions) {
@@ -111,6 +115,22 @@ export default new Vuex.Store({
       console.log('SET_STANDINGS_L1()');
       console.log(standingsL1);
       state.standingsL1 = standingsL1;
+    },
+    //Serie A
+    SET_TEAMS_SA(state, teamsSA) {
+      console.log('SET_TEAMS_SA()');
+      console.log(teamsSA);
+      state.teamsSA = teamsSA;
+    },
+    SET_MATCHES_SA(state, matchesSA) {
+      console.log('SET_MATCHES_SA()');
+      console.log(matchesSA);
+      state.matchesSA = matchesSA;
+    },
+    SET_STANDINGS_SA(state, standingsSA) {
+      console.log('SET_STANDINGS_L1()');
+      console.log(standingsSA);
+      state.standingsSA = standingsSA;
     },
   },
   actions: {
@@ -385,6 +405,58 @@ export default new Vuex.Store({
           console.log('StandingsL1()');
           console.log(data.data);
           commit('SET_STANDINGS_L1', standingsL1);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    //Serie A
+    MatchesSA({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2019/matches', {
+          headers: {
+            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
+          },
+        })
+        .then((data) => {
+          let matchesSA = data.data;
+          console.log('MatchesSA()');
+          console.log(data.data);
+          commit('SET_MATCHES_SA', matchesSA);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    TeamsSA({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2019/teams', {
+          headers: {
+            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
+          },
+        })
+        .then((data) => {
+          let teamsSA = data.data;
+          console.log('TeamsSA()');
+          console.log(data.data);
+          commit('SET_TEAMS_SA', teamsSA);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    StandingsSA({ commit }) {
+      axios
+        .get('http://api.football-data.org/v2/competitions/2019/standings', {
+          headers: {
+            'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
+          },
+        })
+        .then((data) => {
+          let standingsSA = data.data;
+          console.log('StandingsSA()');
+          console.log(data.data);
+          commit('SET_STANDINGS_SA', standingsSA);
         })
         .catch((error) => {
           console.log(error);
