@@ -3,14 +3,14 @@
     dateToday: {{fecha}} | aux: {{fecha2}}
     <div class="contenido border border-warning bg-dark rounded font-weight-bold text-dark my-2">
       <h2 class="titulos text-center text-warning border-bottom border-warning py-3">MATCHES</h2>
-      <div class=" m-2" v-for="(match, index3) in matches.matches" :key="index3">
+      <div class=" m-2" v-for="(match, index3) in matchesSA.matches" :key="index3">
         <div class="textcontent border border-dark text-center" v-if="match.utcDate >= '2019-08-16T19:00:00Z' && match.utcDate <= '2019-08-19T21:00:00Z'">
           <div class="border rounded-top border-warning bg-warning p-2">
             {{match.utcDate}}
           </div>
           <div class="d-flex justify-content-center border-left border-right border-bottom rounded-bottom border-warning">
             <div class="w-100 align-self-center text-warning py-3">
-              <router-link class="text-warning" :to="{name: 'Team', params:{id: match.homeTeam.id}}">
+              <router-link class="text-warning" :to="{name: 'TeamSA', params:{id: match.homeTeam.id}}">
                 {{match.homeTeam.name}}
               </router-link>
             </div>
@@ -24,7 +24,7 @@
               {{match.score.fullTime.awayTeam}}
             </div>
             <div class="w-100 align-self-center py-3">
-              <router-link class="text-warning" :to="{name: 'Team', params:{id: match.awayTeam.id}}">
+              <router-link class="text-warning" :to="{name: 'TeamSA', params:{id: match.awayTeam.id}}">
                 {{match.awayTeam.name}}
               </router-link>
             </div>
@@ -52,10 +52,10 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('Matches');
+    this.$store.dispatch('MatchesSA');
   },
   computed: {
-    ...mapState(['matches'])
+    ...mapState(['matchesSA'])
   },
 }
 </script>
