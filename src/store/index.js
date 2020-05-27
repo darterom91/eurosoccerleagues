@@ -413,7 +413,7 @@ export default new Vuex.Store({
     //Serie A
     MatchesSA({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2019/matches', {
+        .get('https://api.football-data.org/v2/competitions/2019/matches', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -430,7 +430,7 @@ export default new Vuex.Store({
     },
     TeamsSA({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2019/teams', {
+        .get('https://api.football-data.org/v2/competitions/2019/teams', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
@@ -447,7 +447,7 @@ export default new Vuex.Store({
     },
     StandingsSA({ commit }) {
       axios
-        .get('http://api.football-data.org/v2/competitions/2019/standings', {
+        .get('https://api.football-data.org/v2/competitions/2019/standings', {
           headers: {
             'X-Auth-Token': 'a82fbc3023a849348a52a3bd07c0f40e',
           },
