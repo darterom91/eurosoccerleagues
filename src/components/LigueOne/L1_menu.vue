@@ -29,7 +29,6 @@ export default {
 </script>
 
 <style scoped>
-
 .contenido {
   padding: 0;
   font-size: 50%;
@@ -38,6 +37,10 @@ export default {
   margin: 2px;
 }
 .logos{
+  padding: 0px;
+  background-color: white;
+  border: 2px solid rgb(203, 193, 84);
+  border-radius: 100%;
   width: 50px;
   height: 20px;
 }
@@ -74,7 +77,7 @@ export default {
     margin: 0.1px;
   }
   .logos{
-    width: 17.5px;
+    width: 17px;
     height: 20px;
   }
 }
@@ -130,8 +133,8 @@ export default {
     margin: 0.5px;
   }
   .logos{
-    width: 30px;
-    height: 34px;
+    width: 28px;
+    height: 32px;
   }
 }
 
