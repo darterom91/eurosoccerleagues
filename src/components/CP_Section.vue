@@ -104,8 +104,8 @@ export default {
     margin: 0px;
   }
   .logos{
-    width: 16.5px;
-    height: 20px;
+    width: 15.5px;
+    height: 15.5px;
   }
 }
 
