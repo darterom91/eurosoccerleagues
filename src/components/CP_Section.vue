@@ -105,7 +105,7 @@ export default {
   }
   .logos{
     width: 15.5px;
-    height: 15.5px;
+    height: 20.5px;
   }
 }
 
@@ -129,14 +129,27 @@ export default {
     font-size: 50%;
   }
   .contentLogo{
-    margin: 1px;
+    margin: 0.5px;
   }
   .logos{
-    width: 20px;
-    height: 25px;
+    width: 18px;
+    height: 22.5px;
   }
 }
 
+@media (min-width: 410px){
+  .contenido {
+    padding: 0;
+    font-size: 50%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 18px;
+    height: 25px;
+  }
+}
 @media (min-width: 540px){
   .contenido {
     padding: 0;
