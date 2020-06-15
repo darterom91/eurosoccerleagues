@@ -1,15 +1,15 @@
 <template>
   <div>
     dateToday: {{fecha}} | aux: {{fecha2}}
-    <div class="contenido border border-warning bg-primary rounded font-weight-bold text-dark my-2">
-      <h2 class="titulos text-center text-warning border-bottom border-warning bg-dark py-3">MATCHES</h2>
+    <div class="contenido border border-warning bg-dark rounded font-weight-bold text-dark my-2">
+      <h2 class="titulos text-center text-warning border-bottom border-warning py-3">MATCHES</h2>
       <div class=" m-2" v-for="(match, index3) in matchesLaLiga.matches" :key="index3">
         <div class="textcontent border border-dark text-center" v-if="match.utcDate >= fecha && match.utcDate <= fecha2">
           <div class="border rounded-top border-warning bg-warning p-2">
-            {{match.utcDate}}
+           Fecha {{match.utcDate}} | Matchday: {{match.matchday}}
           </div>
           <div class="d-flex justify-content-center border-left border-right border-bottom rounded-bottom border-warning">
-            <div class="w-100 align-self-center bg-dark text-warning py-3">
+            <div class="w-100 align-self-center text-warning py-3">
               <router-link class="text-warning" :to="{name: 'TeamLaLiga', params:{id: match.homeTeam.id}}">
                 {{match.homeTeam.name}}
               </router-link>
@@ -21,7 +21,8 @@
               </div>
             </div>
             <div class="w-25 align-self-center bg-warning border-left border-right border-dark py-3">
-              vs
+              <div>vs</div>
+              <div class="statusText">{{match.status}}</div>
             </div>
             <div class="w-25 border-top border-dark align-self-center bg-light py-3">
               {{match.score.fullTime.awayTeam}}
@@ -29,7 +30,7 @@
                 0
               </div>
             </div>
-            <div class="w-100 align-self-center bg-dark py-3">
+            <div class="w-100 align-self-center py-3">
               <router-link class="text-warning" :to="{name: 'TeamLaLiga', params:{id: match.awayTeam.id}}">
                 {{match.awayTeam.name}}
               </router-link>
@@ -46,9 +47,9 @@ import {mapState} from 'vuex'
 
 var today = new Date();
 
-var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 0)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
+var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + -5)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
 
-var aux = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 7)).slice(-2)+'T'+"00"+':'+"00"+':'+"00"+'Z';
+var aux = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 3)).slice(-2)+'T'+"00"+':'+"00"+':'+"00"+'Z';
 
 export default {
   data() {
@@ -72,8 +73,24 @@ export default {
   padding: 0;
   font-size: 50%;
 }
+.contentLogo{
+  margin: 2px;
+}
+.logos{
+  width: 50px;
+  height: 20px;
+}
+
+.titulos{
+  padding: 0;
+}
+
 .textcontent{
   font-size: 100%;
+  color: black;
+}
+.statusText{
+  font-size: 50%;
   color: black;
 }
 
@@ -82,12 +99,26 @@ export default {
     padding: 0;
     font-size: 50%;
   }
+  .contentLogo{
+    margin: 0px;
+  }
+  .logos{
+    width: 16.5px;
+    height: 20px;
+  }
 }
 
 @media (min-width: 350px){
   .contenido {
     padding: 0;
     font-size: 50%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 15px;
+    height: 20px;
   }
 }
 
@@ -96,12 +127,26 @@ export default {
     padding: 0;
     font-size: 50%;
   }
+  .contentLogo{
+    margin: 1px;
+  }
+  .logos{
+    width: 20px;
+    height: 25px;
+  }
 }
 
 @media (min-width: 540px){
   .contenido {
     padding: 0;
     font-size: 60%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 25px;
+    height: 25px;
   }
 }
 
@@ -110,6 +155,13 @@ export default {
     padding: 0;
     font-size: 70%;
   }
+  .contentLogo{
+    margin: 0px;
+  }
+  .logos{
+    width: 35px;
+    height: 35px;
+  }
 }
 
 @media (min-width: 960px){
@@ -117,12 +169,26 @@ export default {
     padding: 0;
     font-size: 80%;
   }
+  .contentLogo{
+    margin: 2px;
+  }
+  .logos{
+    width: 50px;
+    height: 40px;
+  }
 }
 
 @media (min-width: 1200px){
   .contenido {
     padding: 0;
     font-size: 80%;
+  }
+  .contentLogo{
+    margin: 2px;
+  }
+  .logos{
+    width: 60px;
+    height: 60px;
   }
 }
 
