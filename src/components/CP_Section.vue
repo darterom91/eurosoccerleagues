@@ -7,6 +7,165 @@
           </div>
       </div>
     </div>
+
+    <div class="contenido text-center border border-dark bg-warning py-1 mx-1">
+      <h2 class="">MATCHES</h2>
+      <div class=" m-2" v-for="(match, index3) in matches.matches" :key="index3">
+        <div class="text-center border rounded border-dark bg-dark text-light p-2" v-if="match.utcDate >= '2019-08-16T19:00:00Z' && match.utcDate <= '2019-08-19T21:00:00Z'">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="flex-fill font-weight-bold w-25 border border-light p-2">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.homeTeam.id">
+                  <router-link class="text-light" :to="{name: 'Team', params:{id: match.homeTeam.id}}">
+                    {{match.homeTeam.name}}
+                  </router-link>
+                  <div class="contentLogo">
+                    <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-fill font-weight-bold w-25 border border-light p-2">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.awayTeam.id">
+                  <router-link class="text-light" :to="{name: 'Team', params:{id: match.awayTeam.id}}">
+                    {{match.awayTeam.name}}
+                  </router-link>
+                  <div class="contentLogo">
+                    <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- prueba 1
+    dateToday: {{fecha}} | aux: {{fecha2}}
+    <div class="contenido text-center border border-dark bg-warning py-1 mx-1">
+      <h2 class="">MATCHES</h2>
+      <div class=" m-2" v-for="(match, index3) in matches.matches" :key="index3">
+        <div class="text-center border rounded border-dark bg-dark text-light p-2" v-if="match.utcDate >= '2019-08-16T19:00:00Z' && match.utcDate <= '2019-08-19T21:00:00Z'">
+          <div class="font-weight-bold text-center ">
+            {{match.utcDate}}
+          </div>
+          <div class="font-weight-bold text-center pb-2">
+            {{match.status}}
+          </div>
+          <div class="d-flex flex-row justify-content-center">
+            <div class="flex-fill font-weight-bold w-25 border border-light p-2">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.homeTeam.id">
+                  <div>
+                    <router-link class="text-light" :to="{name: 'Team', params:{id: match.homeTeam.id}}">
+                      {{match.homeTeam.name}}
+                    </router-link>
+                  </div>
+                  <div class="contentLogo">
+                    <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-dark font-weight-bold border border-light bg-light p-4">
+              {{match.score.fullTime.homeTeam}}
+            </div>
+            <div class="py-4 px-2">
+              vs
+            </div>
+            <div class="text-dark border font-weight-bold border-light bg-light p-4">
+              {{match.score.fullTime.awayTeam}}
+            </div>
+            <div class="flex-fill font-weight-bold w-25 border border-light p-2">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.awayTeam.id">
+                  <div>
+                    <router-link class="text-light" :to="{name: 'Team', params:{id: match.awayTeam.id}}">
+                      {{match.awayTeam.name}}
+                    </router-link>
+                  </div>
+                  <div class="contentLogo">
+                    <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    prueba 2
+    dateToday: {{fecha}} | aux: {{fecha2}}
+    <div class="contenido text-center border border-dark bg-warning py-1 mx-1">
+      <h2 class="">MATCHES</h2>
+      <div class=" m-2" v-for="(match, index3) in matches.matches" :key="index3">
+        <div class="text-center border rounded border-dark bg-dark text-light p-2" v-if="match.utcDate >= '2019-08-16T19:00:00Z' && match.utcDate <= '2019-08-19T21:00:00Z'">
+          <div class="font-weight-bold text-center ">
+            {{match.utcDate}}
+          </div>
+          <div class="font-weight-bold text-center pb-2">
+            {{match.status}}
+          </div>
+          <div class="d-flex align-items-center flex-row justify-content-center border border-light">
+            <div class="flex-fill font-weight-bold w-25">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.homeTeam.id">
+                  <div>
+                    <router-link class="text-light text-wrap" :to="{name: 'Team', params:{id: match.homeTeam.id}}">
+                      {{match.homeTeam.name}}
+                    </router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border border-light p-2">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.homeTeam.id">
+                  <div class="contentLogo">
+                    <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-light font-weight-bold p-2">
+              {{match.score.fullTime.homeTeam}}
+            </div>
+            <div class="p-2">
+              vs
+            </div>
+            <div class="text-light font-weight-bold p-2">
+              {{match.score.fullTime.awayTeam}}
+            </div>           
+            <div class="border border-light p-2">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.awayTeam.id">
+                  <div class="contentLogo">
+                    <router-link :to="{name: 'Team', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex-fill font-weight-bold w-25">
+              <div v-for="(team, index2) in teamsLaLiga.teams" :key="index2">
+                <div v-if="team.id == match.awayTeam.id">
+                  <div>
+                    <router-link class="text-light text-wrap" :to="{name: 'Team', params:{id: match.awayTeam.id}}">
+                      {{match.awayTeam.name}}
+                    </router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTUAL
     dateToday: {{fecha}} | aux: {{fecha2}}
     <div class="contenido border border-warning bg-dark rounded font-weight-bold text-dark my-2">
       <h2 class="titulos text-center text-warning border-bottom border-warning py-3">MATCHES</h2>
@@ -38,7 +197,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -73,7 +232,6 @@ export default {
 </script>
 
 <style scoped>
-
 .contenido {
   padding: 0;
   font-size: 50%;
@@ -82,6 +240,10 @@ export default {
   margin: 2px;
 }
 .logos{
+  padding: 0px;
+  background-color: white;
+  border: 2px solid rgb(203, 193, 84);
+  border-radius: 100%;
   width: 50px;
   height: 20px;
 }
@@ -104,7 +266,7 @@ export default {
     margin: 0px;
   }
   .logos{
-    width: 16.5px;
+    width: 16px;
     height: 20px;
   }
 }
@@ -115,10 +277,10 @@ export default {
     font-size: 50%;
   }
   .contentLogo{
-    margin: 0.5px;
+    margin: 0.1px;
   }
   .logos{
-    width: 15px;
+    width: 17px;
     height: 20px;
   }
 }
@@ -129,11 +291,25 @@ export default {
     font-size: 50%;
   }
   .contentLogo{
-    margin: 1px;
+    margin: 0px;
   }
   .logos{
-    width: 20px;
-    height: 25px;
+    width: 19px;
+    height: 21px;
+  }
+}
+
+@media (min-width: 410px){
+  .contenido {
+    padding: 0;
+    font-size: 50%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 19px;
+    height: 20px;
   }
 }
 
@@ -146,8 +322,36 @@ export default {
     margin: 0.5px;
   }
   .logos{
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 600px){
+  .contenido {
+    padding: 0;
+    font-size: 60%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 28px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 650px){
+  .contenido {
+    padding: 0;
+    font-size: 60%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 32px;
+    height: 34px;
   }
 }
 
@@ -160,8 +364,36 @@ export default {
     margin: 0px;
   }
   .logos{
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 730px){
+  .contenido {
+    padding: 0;
+    font-size: 70%;
+  }
+  .contentLogo{
+    margin: 0px;
+  }
+  .logos{
+    width: 36px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 800px){
+  .contenido {
+    padding: 0;
+    font-size: 70%;
+  }
+  .contentLogo{
+    margin: 0px;
+  }
+  .logos{
+    width: 40px;
+    height: 42px;
   }
 }
 
@@ -174,8 +406,8 @@ export default {
     margin: 2px;
   }
   .logos{
-    width: 50px;
-    height: 40px;
+    width: 46px;
+    height: 50px;
   }
 }
 

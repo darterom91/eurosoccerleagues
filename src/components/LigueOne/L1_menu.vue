@@ -29,7 +29,6 @@ export default {
 </script>
 
 <style scoped>
-
 .contenido {
   padding: 0;
   font-size: 50%;
@@ -38,6 +37,10 @@ export default {
   margin: 2px;
 }
 .logos{
+  padding: 0px;
+  background-color: white;
+  border: 2px solid rgb(203, 193, 84);
+  border-radius: 100%;
   width: 50px;
   height: 20px;
 }
@@ -60,7 +63,7 @@ export default {
     margin: 0px;
   }
   .logos{
-    width: 16.5px;
+    width: 16px;
     height: 20px;
   }
 }
@@ -71,10 +74,10 @@ export default {
     font-size: 50%;
   }
   .contentLogo{
-    margin: 0.5px;
+    margin: 0.1px;
   }
   .logos{
-    width: 15px;
+    width: 17px;
     height: 20px;
   }
 }
@@ -85,11 +88,25 @@ export default {
     font-size: 50%;
   }
   .contentLogo{
-    margin: 1px;
+    margin: 0px;
   }
   .logos{
-    width: 20px;
-    height: 25px;
+    width: 19px;
+    height: 21px;
+  }
+}
+
+@media (min-width: 410px){
+  .contenido {
+    padding: 0;
+    font-size: 50%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 19px;
+    height: 20px;
   }
 }
 
@@ -102,8 +119,36 @@ export default {
     margin: 0.5px;
   }
   .logos{
-    width: 25px;
-    height: 25px;
+    width: 26px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 600px){
+  .contenido {
+    padding: 0;
+    font-size: 60%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 28px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 650px){
+  .contenido {
+    padding: 0;
+    font-size: 60%;
+  }
+  .contentLogo{
+    margin: 0.5px;
+  }
+  .logos{
+    width: 32px;
+    height: 34px;
   }
 }
 
@@ -116,8 +161,36 @@ export default {
     margin: 0px;
   }
   .logos{
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 730px){
+  .contenido {
+    padding: 0;
+    font-size: 70%;
+  }
+  .contentLogo{
+    margin: 0px;
+  }
+  .logos{
+    width: 36px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 800px){
+  .contenido {
+    padding: 0;
+    font-size: 70%;
+  }
+  .contentLogo{
+    margin: 0px;
+  }
+  .logos{
+    width: 40px;
+    height: 42px;
   }
 }
 
@@ -130,8 +203,8 @@ export default {
     margin: 2px;
   }
   .logos{
-    width: 50px;
-    height: 40px;
+    width: 46px;
+    height: 50px;
   }
 }
 
