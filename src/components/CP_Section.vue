@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="contenido text-center border border-dark bg-warning py-1 mx-1">
+    <!-- <div class="contenido text-center border border-dark bg-warning py-1 mx-1">
       <h2 class="">MATCHES</h2>
       <div class=" m-2" v-for="(match, index3) in matches.matches" :key="index3">
         <div class="text-center border rounded border-dark bg-dark text-light p-2" v-if="match.utcDate >= '2019-08-16T19:00:00Z' && match.utcDate <= '2019-08-19T21:00:00Z'">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    </div>
+    </div> -->
 
     <!-- prueba 1
     dateToday: {{fecha}} | aux: {{fecha2}}
