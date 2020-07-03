@@ -22,7 +22,7 @@
             <tr v-for="(tables, index2) in standingSA.table" :key="index2">
               <td class="">{{tables.position}}</td>
               <td class="">
-                <router-link class="text-dark" :to="{name: 'TeamBL', params:{id: tables.team.id}}">
+                <router-link class="text-dark" :to="{name: 'TeamSA', params:{id: tables.team.id}}">
                   {{tables.team.name}}
                 </router-link>
               </td>
