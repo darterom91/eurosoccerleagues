@@ -113,6 +113,10 @@ export default {
   margin: 2px;
 }
 .logos{
+  padding: 0px;
+  background-color: white;
+  border: 2px solid rgb(203, 193, 84);
+  border-radius: 100%;
   width: 50px;
   height: 20px;
 }
