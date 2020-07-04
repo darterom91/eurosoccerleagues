@@ -13,22 +13,38 @@
           </div>
           <div class="d-flex align-items-center flex-row justify-content-center border border-light">
             <div class="flex-fill font-weight-bold w-25">
-              <div v-for="(team, index2) in teamsBL.teams" :key="index2">
-                <div v-if="team.id == match.homeTeam.id">
-                  <div>
-                    <router-link class="text-light text-wrap" :to="{name: 'TeamBL', params:{id: match.homeTeam.id}}">
-                      {{match.homeTeam.name}}
-                    </router-link>
+              <div v-if="match.homeTeam.id != 44">
+                <div v-for="(team, index2) in teamsBL.teams" :key="index2">
+                  <div v-if="team.id == match.homeTeam.id">
+                    <div>
+                      <router-link class="text-light text-wrap" :to="{name: 'TeamBL', params:{id: match.homeTeam.id}}">
+                        {{match.homeTeam.name}}
+                      </router-link>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <div v-if="match.homeTeam.id == 44">
+                <div>
+                  <router-link class="text-light text-wrap" :to="{name: 'TeamBL', params:{id: match.homeTeam.id}}">
+                    {{match.homeTeam.name}}
+                  </router-link>
                 </div>
               </div>
             </div>
             <div class="border border-light p-2">
-              <div v-for="(team, index2) in teamsBL.teams" :key="index2">
-                <div v-if="team.id == match.homeTeam.id">
-                  <div class="contentLogo">
-                    <router-link :to="{name: 'TeamBL', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+              <div v-if="match.homeTeam.id != 44">
+                <div v-for="(team, index2) in teamsBL.teams" :key="index2">
+                  <div v-if="team.id == match.homeTeam.id">
+                    <div class="contentLogo">
+                      <router-link :to="{name: 'TeamBL', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <div v-if="match.homeTeam.id == 44">
+                <div class="contentLogo">
+                  <router-link :to="{name: 'TeamBL', params:{id: match.homeTeam.id}}"><img src="@/assets/img/1._FC_Heidenheim_1846.png" alt="" class="logos"/></router-link>
                 </div>
               </div>
             </div>
@@ -49,22 +65,38 @@
               </div>
             </div>
             <div class="border border-light p-2">
-              <div v-for="(team, index2) in teamsBL.teams" :key="index2">
-                <div v-if="team.id == match.awayTeam.id">
-                  <div class="contentLogo">
-                    <router-link :to="{name: 'TeamBL', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+              <div v-if="match.awayTeam.id != 44">
+                <div v-for="(team, index2) in teamsBL.teams" :key="index2">
+                  <div v-if="team.id == match.awayTeam.id">
+                    <div class="contentLogo">
+                      <router-link :to="{name: 'TeamBL', params:{id: team.id}}"><b-img v-bind:src="team.crestUrl" alt="" class="logos"></b-img></router-link>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <div v-if="match.awayTeam.id == 44">
+                <div class="contentLogo">
+                  <router-link :to="{name: 'TeamBL', params:{id: match.awayTeam.id}}"><img src="@/assets/img/1._FC_Heidenheim_1846.png" alt="" class="logos"/></router-link>
                 </div>
               </div>
             </div>
             <div class="flex-fill font-weight-bold w-25">
-              <div v-for="(team, index2) in teamsBL.teams" :key="index2">
-                <div v-if="team.id == match.awayTeam.id">
-                  <div>
-                    <router-link class="text-light text-wrap" :to="{name: 'TeamBL', params:{id: match.awayTeam.id}}">
-                      {{match.awayTeam.name}}
-                    </router-link>
+              <div v-if="match.awayTeam.id != 44">
+                <div v-for="(team, index2) in teamsBL.teams" :key="index2">
+                  <div v-if="team.id == match.awayTeam.id">
+                    <div>
+                      <router-link class="text-light text-wrap" :to="{name: 'TeamBL', params:{id: match.awayTeam.id}}">
+                        {{match.awayTeam.name}}
+                      </router-link>
+                    </div>
                   </div>
+                </div>
+              </div>
+              <div v-if="match.awayTeam.id == 44">
+                <div>
+                  <router-link class="text-light text-wrap" :to="{name: 'TeamBL', params:{id: match.awayTeam.id}}">
+                    {{match.awayTeam.name}}
+                  </router-link>
                 </div>
               </div>
             </div>
