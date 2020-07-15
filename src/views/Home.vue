@@ -1,8 +1,10 @@
 <template>
   <div class="home">
-    <cpHeader/>
-    <cpSection/>
-    <cpSection2/>
+    <PLmatches/>
+    <LaLigamatches/>
+    <BLmatches/>
+    <L1matches/>
+    <SAmatches/>
     <cpFooter/>
   </div>
 </template>
@@ -10,16 +12,22 @@
 <script>
 // @ is an alias to /src
 import cpHeader from '@/components/CP_Header.vue'
-import cpSection from '@/components/CP_Section.vue'
-import cpSection2 from '@/components/CP_Section2.vue'
+import PLmatches from '@/components/PremierLeague/PL_matches.vue'
+import LaLigamatches from '@/components/LaLiga/LaLiga_matches.vue'
+import BLmatches from '@/components/Bundesliga/BL_matches.vue'
+import L1matches from '@/components/LigueOne/L1_matches.vue'
+import SAmatches from '@/components/SerieA/SA_matches.vue'
 import cpFooter from '@/components/CP_Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     cpHeader,
-    cpSection,
-    cpSection2,
+    PLmatches,
+    LaLigamatches,
+    BLmatches,
+    L1matches,
+    SAmatches,
     cpFooter,
   }
 }
