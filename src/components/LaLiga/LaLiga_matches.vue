@@ -2,7 +2,7 @@
   <div>
     dateToday: {{fecha}} | aux: {{fecha2}}
     <div class="contenido text-center border border-dark bg-warning py-1 mx-1">
-      <h2 class="">MATCHES</h2>
+      <h2 class="">La Liga</h2>
       <div class=" m-2" v-for="(match, index3) in matchesLaLiga.matches" :key="index3">
         <div class="text-center border rounded border-dark bg-dark text-light p-2" v-if="match.utcDate >= fecha && match.utcDate <= fecha2">
           <div class="font-weight-bold text-center ">
@@ -70,6 +70,9 @@
             </div>
           </div>
         </div>
+        <div class="bg-dark text-warning p-2 m-2" v-else-if="index3==369">
+          <h1>END LEAGUE</h1>
+        </div>
       </div>
     </div>
   </div>
@@ -80,9 +83,9 @@ import {mapState} from 'vuex'
 
 var today = new Date();
 
-var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + -5)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
+var dateToday = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + -1)).slice(-2)+'T'+("0" + (today.getHours() + 1)).slice(-2)+':'+("0" + (today.getMinutes() + 1)).slice(-2)+':'+("0" + (today.getSeconds() + 1)).slice(-2)+'Z';
 
-var aux = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 3)).slice(-2)+'T'+"00"+':'+"00"+':'+"00"+'Z';
+var aux = today.getFullYear()+'-'+("0" + (today.getMonth() + 1)).slice(-2)+'-'+ ("0" + (today.getDate() + 2)).slice(-2)+'T'+"00"+':'+"00"+':'+"00"+'Z';
 
 export default {
   data() {

@@ -6,7 +6,9 @@
           EuroSoccerLeague
         </div>
         <div class="footerImg col-5 col-sm-5 col-md-5">
-          <img src="@/assets/img/ESL.png" alt="">
+          <router-link class="text-light text-wrap" :to="{name: 'Home'}">
+            <img class="imglogo" src="@/assets/img/ESL.png" alt="">
+          </router-link>
         </div>
       </div>
       <div class="row border-top border-light pt-2 pb-3">
