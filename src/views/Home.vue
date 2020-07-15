@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <cpHeader/>
     <PLmatches/>
     <LaLigamatches/>
     <BLmatches/>
