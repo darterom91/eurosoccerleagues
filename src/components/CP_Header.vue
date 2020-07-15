@@ -3,13 +3,17 @@
     <div class="header">
       <div class="fondo2 d-flex">
         <div class="logo text-center col-2 col-sm- col-md-2 col-lg-2 p-2">
-          <img class="imglogo" src="@/assets/img/ESL.png" alt="">
+          <router-link class="text-light text-wrap" :to="{name: 'Home'}">
+            <img class="imglogo" src="@/assets/img/ESL.png" alt="">
+          </router-link>
         </div>
         <div class="fondoTitulo w-100 col-8 col-sm-8 col-md-8 col-lg-8 p-1">
           <div class="titulo text-center p-2 ">EuroSoccerLeagues</div>
         </div>
         <div class="logo text-center col-2 col-sm- col-md-2 col-lg-2 p-2">
-          <img class="imglogo " src="@/assets/img/ESL.png" alt="">
+          <router-link class="text-light text-wrap" :to="{name: 'Home'}">
+            <img class="imglogo" src="@/assets/img/ESL.png" alt="">
+          </router-link>
         </div>
       </div>
     </div>
